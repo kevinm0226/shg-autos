@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 import os
 from routes.main_routes import main_blueprint  
+from routes.becx_field_report_route import becx_fr_blueprint  
 from datetime import timedelta
 
 
@@ -19,7 +20,7 @@ class Config:
 
 app.config.from_object(Config)
 app.register_blueprint(main_blueprint) 
-
+app.register_blueprint(becx_fr_blueprint) 
 
 if __name__ == "__main__":
     app.run(debug=True)

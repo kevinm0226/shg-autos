@@ -19,7 +19,7 @@
       <div class="automation-grid">
         <div class="automation-box">
           <h3>BECx Field Report</h3>
-          <a href="becx-field-report.html">Launch</a>
+          <a href="/becx-field-report">Launch</a>
           <details class="dropdown">
             <summary>How it works</summary>
             <p>Generates field reports based on site visit notes and photos, automating formatting and structuring.</p>
@@ -85,7 +85,10 @@
           <a href="deliverables.html">Launch</a>
           <details class="dropdown">
             <summary>How it works</summary>
-            <p>Compiles a list of required deliverables based on contract language and project stage.</p>
+            <p>This uses an optical character recognition script to parse through the 
+              specifications. An AI model has been pre trained to identify testing requirements, 
+              field quality control, and other items to create a deliverables list. 
+            </p>
           </details>
         </div>
     
@@ -94,7 +97,23 @@
           <a href="kickoff-presentation.html">Launch</a>
           <details class="dropdown">
             <summary>How it works</summary>
-            <p>Builds a Commissioning Kickoff presentation using project data and slide templates.</p>
+            <p>This uses the standard template that we use and auto populates it with project 
+              specific testing requirements. A script is done using optical character recognition to 
+              parse through the specs, looking for requirements that are of interest. These are then stored 
+              and populated onto the slides.
+            </p>
+          </details>
+        </div>
+        <div class="automation-box">
+          <h3>BECx Design Reviews</h3>
+          <a href="becx-design-review.html">Launch</a>
+          <details class="dropdown">
+            <summary>How it works</summary>
+            <p>This takes in the drawings and analyzes them for deficiencies. A convolutional neural network 
+              has been trained to identify areas of concern in wall assemblies and roof assemblies. A 
+              seperate machine learning algorithm is then used to parse the pdf, aquire only sections 
+              of relevance, and then use this info to populate the template.
+            </p>
           </details>
         </div>
       </div>
