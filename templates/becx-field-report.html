@@ -1,11 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHG Auto - BECx field report</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHG Auto - BECx Field Report</title>
+  <link rel="stylesheet" href="/static/css/becx-report.css" />
 </head>
 <body>
-    
+  <div class="container">
+    <header>
+      <h1>BECx Field Report</h1>
+      <p>Upload photos from your site visit and (optionally) provide notes. The SHG Assistant will take it from there.</p>
+    </header>
+
+    <form id="becx-report-form" enctype="multipart/form-data">
+      <label for="description">Optional description or notes:</label>
+      <textarea id="description" name="description" rows="4" placeholder="Add context or notes for this report..."></textarea>
+
+      <label for="photo-upload">Upload site photos:</label>
+      <input
+        type="file"
+        id="photo-upload"
+        name="photos"
+        accept="image/*"
+        multiple
+        required
+      />
+
+      <div id="preview"></div>
+
+      <button type="submit">Generate Report</button>
+    </form>
+  </div>
+
+  <script src="/static/js/becx_field_report.js"></script>
 </body>
 </html>
