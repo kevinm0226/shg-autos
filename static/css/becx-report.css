@@ -1,72 +1,149 @@
+/* === Base Styles (from main page) === */
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #f9f9f9;
-    margin: 0;
-    padding: 2rem;
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: auto;
-    background: #ffffff;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  }
-  
-  header h1 {
-    margin-bottom: 0.5rem;
-  }
-  
-  header p {
-    margin-top: 0;
-    color: #555;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  textarea {
-    width: 100%;
-    padding: 1rem;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    resize: vertical;
-  }
-  
-  input[type="file"] {
-    padding: 0.5rem 0;
-  }
-  
-  #preview {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 1rem;
-  }
-  
-  #preview img {
-    max-width: 150px;
-    max-height: 150px;
-    object-fit: cover;
-    border-radius: 6px;
-    border: 1px solid #ddd;
-  }
-  
-  button {
-    background-color: #2b6cb0;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-  
-  button:hover {
-    background-color: #1a4d8a;
-  }
-  
+  font-family: Arial, sans-serif; /* Match main page font */
+  margin: 0;
+  padding: 2rem;
+  background: #f4f4f4; /* Match main page background */
+  color: #333; /* Match main page text color */
+}
+
+h1 {
+  font-size: 2.5rem; /* Match main page h1 size */
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 0.5rem;
+  line-height: 1.6; /* Match main page paragraph line height */
+  /* color: #555; Let it inherit from body or set explicitly if needed */
+}
+
+.back-link {
+  display: inline-block; /* Allows margin */
+  margin-bottom: 1rem; /* Space below the link */
+  color: #007bff; /* Standard blue color */
+  text-decoration: none; /* No underline by default */
+  font-weight: bold; /* Make it stand out slightly */
+  transition: color 0.2s ease, text-decoration 0.2s ease; /* Smooth transition */
+}
+
+.back-link:hover {
+  color: #0056b3; /* Darker blue on hover */
+  text-decoration: underline; /* Underline on hover */
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto; /* Added top/bottom margin for spacing */
+  background: #ffffff; /* White background like automation-box */
+  padding: 1.5rem; /* Match automation-box padding */
+  border-radius: 12px; /* Match automation-box border-radius */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Match automation-box shadow */
+}
+
+header {
+  margin-bottom: 2rem; /* Spacing below header */
+  padding-bottom: 1rem; /* Added padding */
+  border-bottom: 1px solid #eee; /* Subtle separator */
+}
+
+header h1 {
+  /* Inherits h1 styles from above */
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  /* Inherits p styles from above */
+  margin-top: 0;
+  color: #555; /* Keep slightly muted color for subtitle */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Increased gap slightly */
+}
+
+label {
+  font-weight: bold;
+  display: block; /* Ensure label is on its own line */
+  margin-bottom: 0.5rem; /* Space below label */
+}
+
+textarea {
+  width: 100%; /* Take full width */
+  padding: 1rem;
+  border-radius: 8px; /* Slightly less rounded than container */
+  border: 1px solid #ccc;
+  resize: vertical;
+  font-family: inherit; /* Use body font */
+  font-size: 1rem;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* === File Upload Drop Zone Styles === */
+input[type="file"]#photo-upload {
+  /* Hide the default ugly file input */
+  display: none;
+}
+
+.drop-zone {
+  border: 2px dashed #ccc;
+  border-radius: 12px; /* Match container radius */
+  padding: 2.5rem; /* Make it spacious */
+  text-align: center;
+  cursor: pointer;
+  background-color: #fafafa; /* Slightly different background */
+  color: #555;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.drop-zone:hover {
+  background-color: #f4f4f4;
+  border-color: #aaa;
+}
+
+/* Style for when dragging over */
+.drop-zone.dragover {
+    background-color: #e0e0e0;
+    border-color: #007bff; /* Use accent color */
+}
+
+.drop-zone p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* === Image Preview Styles === */
+#preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 1rem; /* Space above previews */
+}
+
+#preview img {
+  max-width: 100px; /* Slightly smaller previews */
+  max-height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+/* === Button Styles === */
+button {
+  background-color: #007bff; /* Match main page link color */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px; /* Consistent radius */
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+  align-self: flex-start; /* Align button to the left */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
